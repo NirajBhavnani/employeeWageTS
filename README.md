@@ -19,3 +19,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 * UC1_Attendance_Check: Ability to check employee is present or absent.
 * UC2_FullTime: Calculate full time wage.
 * UC3_PartTime: Calculate part time wage.
+* UC4_Switchcase: Calculate wage with switchcase random value.
