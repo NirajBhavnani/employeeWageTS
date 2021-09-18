@@ -11,6 +11,7 @@ EMPLOYEEWAGE_TYPESCRIPT
 │       Compiled JS Files
 │
 └───src
+        constants.ts
         index.ts
 ```
 
