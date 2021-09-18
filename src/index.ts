@@ -53,4 +53,7 @@ console.log(printUC("UC2"));
 empHours = setDutyWage(Constants.isFullTime);
 calculateWage();
 
-
+// UC3
+console.log(printUC("UC3"));
+empHours = setDutyWage(Constants.isPartTime);
+calculateWage();
