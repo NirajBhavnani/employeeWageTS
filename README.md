@@ -21,3 +21,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 * UC3_PartTime: Calculate part time wage.
 * UC4_Switchcase: Calculate wage with switchcase random value.
 * UC5_Monthly_Wages: Calculate monthly wages.
+* UC6_MaxWorkingHrs: Calculate monthly wages for specific hours.

@@ -52,21 +52,39 @@ console.log(printUC("UC2"));
 
 empHours = setDutyWage(Constants.isFullTime);
 calculateWage();
+empHours = 0; //reset
 
 // UC3
 console.log(printUC("UC3"));
 empHours = setDutyWage(Constants.isPartTime);
 calculateWage();
+empHours = 0; //reset
 
 // UC4
 console.log(printUC("UC4"));
 let randomBoolean: boolean = Math.random() >= 0.5;
 empHours = setDutyWage(randomBoolean);
 calculateWage();
+empHours = 0; //reset
 
 // UC5
 console.log(printUC("UC5"));
-for(var d=0; d<Constants.days; d+=1){
-    empHours += setDutyWage(randomBoolean);
+for (var d: number = 0; d < Constants.days; d += 1) {
+  empHours += setDutyWage(randomBoolean);
 }
 calculateWage();
+empHours = 0; //reset
+
+// UC6
+console.log(printUC("UC6"));
+let totalWorkDays: number = 0;
+
+while (
+  empHours < Constants.maxHrsMonth &&
+  totalWorkDays < Constants.maxDaysMonth
+) {
+  totalWorkDays++;
+  empHours += setDutyWage(randomBoolean);
+}
+calculateWage();
+empHours = 0; //reset
