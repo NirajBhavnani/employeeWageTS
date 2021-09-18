@@ -1,5 +1,16 @@
+import { Constants } from "./constants";
+
+let emp_wage: number = 0;
+let empHours: number = 0;
+
+function printUC(uc: string): string {
+    return `------------------------${uc}------------------------`;
+}
+
+// UC1
 console.log("Welcome to Employee Wage Program");
 
+console.log(printUC("UC1"));
 type EmpCheck = {
   is_Absent: number;
   empCheck: number;
@@ -15,3 +26,31 @@ if (user.empCheck == user.is_Absent) {
 } else {
   console.log("Employee is Present");
 }
+
+// ________________________________________________
+
+function setDutyWage (emp_case: boolean):number{
+    switch (emp_case) {
+      case true: //fulltime
+        return empHours = Constants.fulltime;
+    
+      case false: //parttime
+        return empHours = Constants.parttime;
+    
+      default:
+        return empHours = 0;
+    }
+};
+
+function calculateWage():void{
+    emp_wage = empHours * Constants.wageperhour;
+    console.log("Employee wage: " + emp_wage);
+};
+
+// UC2
+console.log(printUC("UC2"));
+
+empHours = setDutyWage(Constants.isFullTime);
+calculateWage();
+
+
