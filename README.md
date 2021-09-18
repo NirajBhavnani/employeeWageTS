@@ -20,3 +20,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 * UC2_FullTime: Calculate full time wage.
 * UC3_PartTime: Calculate part time wage.
 * UC4_Switchcase: Calculate wage with switchcase random value.
+* UC5_Monthly_Wages: Calculate monthly wages.

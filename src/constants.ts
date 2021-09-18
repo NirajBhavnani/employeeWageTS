@@ -6,6 +6,7 @@ export interface ConstInterface{
     maxDaysMonth: number;
     isPartTime: boolean;
     isFullTime: boolean;
+    days: number;
 };
 
 export const Constants: ConstInterface = {
@@ -15,5 +16,6 @@ export const Constants: ConstInterface = {
     maxHrsMonth: 160,
     maxDaysMonth: 20,
     isPartTime: false,
-    isFullTime: true
+    isFullTime: true,
+    days: 30,
 };

@@ -63,3 +63,10 @@ console.log(printUC("UC4"));
 let randomBoolean: boolean = Math.random() >= 0.5;
 empHours = setDutyWage(randomBoolean);
 calculateWage();
+
+// UC5
+console.log(printUC("UC5"));
+for(var d=0; d<Constants.days; d+=1){
+    empHours += setDutyWage(randomBoolean);
+}
+calculateWage();
