@@ -2,6 +2,9 @@ import { Constants } from "./constants";
 
 let emp_wage: number = 0;
 let empHours: number = 0;
+let totalWorkDays: number = 0;
+let wageArr: number[] = [];
+
 
 function printUC(uc: string): string {
   return `------------------------${uc}------------------------`;
@@ -77,7 +80,6 @@ empHours = 0; //reset
 
 // UC6
 console.log(printUC("UC6"));
-let totalWorkDays: number = 0;
 
 while (
   empHours < Constants.maxHrsMonth &&
@@ -108,3 +110,38 @@ class Employee {
 }
 
 let empObj:object = new Employee();
+
+// UC8
+console.log(printUC("UC8"));
+
+function setDutyWage2(emp_case: boolean): number {
+  switch (emp_case) {
+    case true: //fulltime
+      empHours = Constants.fulltime;
+      break
+
+    case false: //parttime
+      empHours = Constants.parttime;
+      break
+
+    default:
+      empHours = 0;
+      break
+  }
+  let dayWage:number = empHours * Constants.wageperhour;
+    wageArr.push(dayWage);
+    return empHours;
+}
+
+let totalWorkDays3: number = 0;
+while (
+  empHours < Constants.maxHrsMonth &&
+  totalWorkDays3 < Constants.maxDaysMonth
+) {
+  totalWorkDays3++;
+  let randomBoolean2: boolean = Math.random() >= 0.5;
+  empHours += setDutyWage2(randomBoolean2);
+}
+calculateWage();
+console.log("Wage Array:"+wageArr);
+empHours = 0; //reset

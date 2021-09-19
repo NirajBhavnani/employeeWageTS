@@ -23,3 +23,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 * UC5_Monthly_Wages: Calculate monthly wages.
 * UC6_MaxWorkingHrs: Calculate monthly wages for specific hours.
 * UC7_Class: Calculate monthly wages for specific hours with the help of employee class.
+* UC8_Wage_Array: Create wage array.
