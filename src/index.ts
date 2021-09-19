@@ -88,3 +88,23 @@ while (
 }
 calculateWage();
 empHours = 0; //reset
+
+// UC7
+console.log(printUC("UC7"));
+class Employee {
+  constructor() {
+    let totalWorkDays2: number = 0;
+
+    while (
+      empHours < Constants.maxHrsMonth &&
+      totalWorkDays2 < Constants.maxDaysMonth
+    ) {
+      totalWorkDays2++;
+      empHours += setDutyWage(randomBoolean);
+    }
+    calculateWage();
+    empHours = 0; //reset
+  }
+}
+
+let empObj:object = new Employee();
