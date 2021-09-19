@@ -34,3 +34,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 >>7. Find the number of days the Employee Worked.
 >* UC10_Map_DAS: Implementation of Map Data Structure.
 >* UC11_Objects: Implementation of Object Data Structure.
+>* UC12_EmployeePayroll: Ability to create Employee Payroll Data with id, name and salary.
