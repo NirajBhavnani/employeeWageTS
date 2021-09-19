@@ -5,8 +5,6 @@ let empHours: number = 0;
 let totalWorkDays: number = 0;
 let wageArr: number[] = [];
 
-
-
 function printUC(uc: string): string {
   return `------------------------${uc}------------------------`;
 }
@@ -111,7 +109,7 @@ class Employee {
   }
 }
 
-let empObj:object = new Employee();
+let empObj: object = new Employee();
 
 // UC8
 console.log(printUC("UC8"));
@@ -120,20 +118,20 @@ function setDutyWage2(emp_case: boolean): number {
   switch (emp_case) {
     case true: //fulltime
       empHours = Constants.fulltime;
-      break
+      break;
 
     case false: //parttime
       empHours = Constants.parttime;
-      break
+      break;
 
     // Actually it has no use since we are using booleans in this problem statement
     default:
       empHours = 0;
-      break
+      break;
   }
-  let dayWage:number = empHours * Constants.wageperhour;
-    wageArr.push(dayWage);
-    return empHours;
+  let dayWage: number = empHours * Constants.wageperhour;
+  wageArr.push(dayWage);
+  return empHours;
 }
 
 let totalWorkDays3: number = 0;
@@ -149,7 +147,7 @@ while (
 wageArr.push(0); //This line is basically added for testing our usecases
 
 calculateWage();
-console.log("Wage Array:"+wageArr);
+console.log("Wage Array:" + wageArr);
 empHours = 0; //reset
 
 // UC9
@@ -171,20 +169,20 @@ console.log(wageUsingForEach());
 function wageMap(): object[] {
   let wage_array: number[] = wageArr;
   let daysVar: object[] = wage_array.map((wages, day) => {
-    return{
-      days: day+1,
+    return {
+      days: day + 1,
       wages,
-    }
+    };
   });
   return daysVar;
 }
 console.log(wageMap());
 
 // show only 160
-function display160():void{
+function display160(): void {
   let wage_array: number[] = wageArr;
-  wage_array.filter((wages:number, day:number) =>{
-    if(wages === 160){
+  wage_array.filter((wages: number, day: number) => {
+    if (wages === 160) {
       console.log(day + 1 + " \t|\t " + wages);
     }
   });
@@ -192,12 +190,12 @@ function display160():void{
 display160();
 
 // first occurence
-function find160():void {
+function find160(): void {
   let onlyFirst: boolean = true;
   let wage_array: number[] = wageArr;
-  wage_array.find((wages:number, day: number) =>{
-    if(wages === 160 && onlyFirst){
-      console.log( `First Occurence at day ${day+1} : ` + wages);
+  wage_array.find((wages: number, day: number) => {
+    if (wages === 160 && onlyFirst) {
+      console.log(`First Occurence at day ${day + 1} : ` + wages);
       onlyFirst = false;
     }
   });
@@ -205,31 +203,27 @@ function find160():void {
 find160();
 
 // check 160
-function check160():void{
+function check160(): void {
   let isValid: boolean = true;
   let wage_array: number[] = wageArr;
-    for (let i = 0; i < wage_array.length; i++) {
-      if (
-        wage_array[i] != 160 &&
-        wage_array[i] != 80 &&
-        wage_array[i] != 0
-      ) {
-        isValid = false;
-        break;
-      }
+  for (let i = 0; i < wage_array.length; i++) {
+    if (wage_array[i] != 160 && wage_array[i] != 80 && wage_array[i] != 0) {
+      isValid = false;
+      break;
     }
-    console.log(
-      "Every Element of Full Time Wage is truly holding Full time wage = " +
-        isValid
-    );
+  }
+  console.log(
+    "Every Element of Full Time Wage is truly holding Full time wage = " +
+      isValid
+  );
 }
 check160();
 
 // show only 80
-function display80():void{
+function display80(): void {
   let wage_array: number[] = wageArr;
-  wage_array.filter((wages:number, day:number) =>{
-    if(wages === 80){
+  wage_array.filter((wages: number, day: number) => {
+    if (wages === 80) {
       console.log(day + 1 + " \t|\t " + wages);
     }
   });
@@ -237,10 +231,10 @@ function display80():void{
 display80();
 
 // show not 0
-function displayNot0():void{
+function displayNot0(): void {
   let wage_array: number[] = wageArr;
-  wage_array.filter((wages:number, day:number) =>{
-    if(wages !== 0){
+  wage_array.filter((wages: number, day: number) => {
+    if (wages !== 0) {
       console.log(day + 1 + " \t|\t " + wages);
     }
   });
@@ -250,16 +244,36 @@ displayNot0();
 // UC10
 console.log(printUC("UC10"));
 
-function mapDataStructure():void{
+function mapDataStructure(): void {
   let wage_array: number[] = wageArr;
   let totalWage: number = 0;
 
   let wagesMap = new Map();
-  for(let day = 1; day<=20; day++){
-      wagesMap.set(day, wage_array[day-1]);
-      totalWage+=wageArr[day-1];
+  for (let day: number = 1; day <= 20; day++) {
+    wagesMap.set(day, wage_array[day - 1]);
+    totalWage += wageArr[day - 1];
   }
-  wagesMap.set('Total Wage', totalWage);
+  wagesMap.set("Total Wage", totalWage);
   console.log(wagesMap);
 }
 mapDataStructure();
+
+// UC11
+console.log(printUC("UC11"));
+
+function objectFunc(): void {
+  let wage_array: number[] = wageArr;
+  let objArr: object[] = [];
+  let wagesObject: object = {};
+
+  for (let day:number = 1; day <= 20; day++) {
+    wagesObject = {
+      days: day,
+      wages: wage_array[day - 1],
+      hours: wage_array[day - 1] / 20,
+    };
+    objArr.push(wagesObject);
+  }
+  console.log(objArr);
+}
+objectFunc();

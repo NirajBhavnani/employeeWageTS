@@ -33,3 +33,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 >>6. Check if there is any Part Time Wage.
 >>7. Find the number of days the Employee Worked.
 >* UC10_Map_DAS: Implementation of Map Data Structure.
+>* UC11_Objects: Implementation of Object Data Structure.
