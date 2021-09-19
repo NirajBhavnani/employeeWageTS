@@ -32,3 +32,4 @@ EMPLOYEEWAGE_TYPESCRIPT
 >>5. Check if Every Element of Full Time Wage is truly holding Full time wage.
 >>6. Check if there is any Part Time Wage.
 >>7. Find the number of days the Employee Worked.
+>* UC10_Map_DAS: Implementation of Map Data Structure.

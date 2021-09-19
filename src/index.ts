@@ -246,3 +246,20 @@ function displayNot0():void{
   });
 }
 displayNot0();
+
+// UC10
+console.log(printUC("UC10"));
+
+function mapDataStructure():void{
+  let wage_array: number[] = wageArr;
+  let totalWage: number = 0;
+
+  let wagesMap = new Map();
+  for(let day = 1; day<=20; day++){
+      wagesMap.set(day, wage_array[day-1]);
+      totalWage+=wageArr[day-1];
+  }
+  wagesMap.set('Total Wage', totalWage);
+  console.log(wagesMap);
+}
+mapDataStructure();
