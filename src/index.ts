@@ -6,6 +6,7 @@ let totalWorkDays: number = 0;
 let wageArr: number[] = [];
 
 
+
 function printUC(uc: string): string {
   return `------------------------${uc}------------------------`;
 }
@@ -40,6 +41,7 @@ function setDutyWage(emp_case: boolean): number {
     case false: //parttime
       return (empHours = Constants.parttime);
 
+    // Actually it has no use since we are using booleans in this problem statement
     default:
       return (empHours = 0);
   }
@@ -124,6 +126,7 @@ function setDutyWage2(emp_case: boolean): number {
       empHours = Constants.parttime;
       break
 
+    // Actually it has no use since we are using booleans in this problem statement
     default:
       empHours = 0;
       break
@@ -142,6 +145,104 @@ while (
   let randomBoolean2: boolean = Math.random() >= 0.5;
   empHours += setDutyWage2(randomBoolean2);
 }
+
+wageArr.push(0); //This line is basically added for testing our usecases
+
 calculateWage();
 console.log("Wage Array:"+wageArr);
 empHours = 0; //reset
+
+// UC9
+console.log(printUC("UC9"));
+
+// forEach wageArr
+function wageUsingForEach(): number {
+  let wage_array: number[] = wageArr;
+  let total_wage: number = 0;
+  wage_array.forEach((wages) => {
+    total_wage += wages;
+  });
+  return total_wage;
+}
+
+console.log(wageUsingForEach());
+
+// wageMap
+function wageMap(): object[] {
+  let wage_array: number[] = wageArr;
+  let daysVar: object[] = wage_array.map((wages, day) => {
+    return{
+      days: day+1,
+      wages,
+    }
+  });
+  return daysVar;
+}
+console.log(wageMap());
+
+// show only 160
+function display160():void{
+  let wage_array: number[] = wageArr;
+  wage_array.filter((wages:number, day:number) =>{
+    if(wages === 160){
+      console.log(day + 1 + " \t|\t " + wages);
+    }
+  });
+}
+display160();
+
+// first occurence
+function find160():void {
+  let onlyFirst: boolean = true;
+  let wage_array: number[] = wageArr;
+  wage_array.find((wages:number, day: number) =>{
+    if(wages === 160 && onlyFirst){
+      console.log( `First Occurence at day ${day+1} : ` + wages);
+      onlyFirst = false;
+    }
+  });
+}
+find160();
+
+// check 160
+function check160():void{
+  let isValid: boolean = true;
+  let wage_array: number[] = wageArr;
+    for (let i = 0; i < wage_array.length; i++) {
+      if (
+        wage_array[i] != 160 &&
+        wage_array[i] != 80 &&
+        wage_array[i] != 0
+      ) {
+        isValid = false;
+        break;
+      }
+    }
+    console.log(
+      "Every Element of Full Time Wage is truly holding Full time wage = " +
+        isValid
+    );
+}
+check160();
+
+// show only 80
+function display80():void{
+  let wage_array: number[] = wageArr;
+  wage_array.filter((wages:number, day:number) =>{
+    if(wages === 80){
+      console.log(day + 1 + " \t|\t " + wages);
+    }
+  });
+}
+display80();
+
+// show not 0
+function displayNot0():void{
+  let wage_array: number[] = wageArr;
+  wage_array.filter((wages:number, day:number) =>{
+    if(wages !== 0){
+      console.log(day + 1 + " \t|\t " + wages);
+    }
+  });
+}
+displayNot0();
